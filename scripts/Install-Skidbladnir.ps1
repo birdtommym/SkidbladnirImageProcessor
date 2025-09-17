@@ -36,7 +36,7 @@ $projectFile = Join-Path $repoRoot 'src/SkidbladnirProcessor.App/SkidbladnirProc
 $appName = 'Skidbladnir Image Processor'
 $exeName = 'SkidbladnirImageProcessor.exe'
 $dotNetExecutable = 'dotnet'
-$dotNetChannel = '8.0'
+$dotNetChannel = '9.0'
 $localDotNetRoot = $null
 $publishDir = $null
 
@@ -62,7 +62,7 @@ function Assert-OperatingSystem {
 function Test-DotNetSdkVersion {
     param(
         [Parameter(Mandatory)][string]$CommandPath,
-        [int]$MinimumMajor = 8
+        [int]$MinimumMajor = 9
     )
 
     try {
@@ -120,7 +120,7 @@ function Install-LocalDotNetSdk {
 }
 
 function Ensure-DotNetSdk {
-    param([int]$MinimumMajor = 8, [string]$Channel = '8.0')
+    param([int]$MinimumMajor = 9, [string]$Channel = '9.0')
 
     $command = Get-Command dotnet -ErrorAction SilentlyContinue
     if ($command -and (Test-DotNetSdkVersion -CommandPath $command.Path -MinimumMajor $MinimumMajor)) {
@@ -280,7 +280,7 @@ try {
     Set-Item -Path Env:DOTNET_CLI_TELEMETRY_OPTOUT -Value '1'
     Set-Item -Path Env:DOTNET_NOLOGO -Value '1'
 
-    Ensure-DotNetSdk -MinimumMajor 8 -Channel $dotNetChannel
+    Ensure-DotNetSdk -MinimumMajor 9 -Channel $dotNetChannel
 
     $publishDir = Publish-Application
     Copy-Installation -PublishDir $publishDir

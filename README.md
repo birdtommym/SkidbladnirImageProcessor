@@ -17,7 +17,7 @@ SkidbladnirProcessor.sln               # Visual Studio solution
 src/SkidbladnirProcessor.App/          # WPF application
 ```
 
-The application is built with .NET 8, WPF and [ImageSharp](https://github.com/SixLabors/ImageSharp) for the processing pipeline.
+The application is built with .NET 9, WPF and [ImageSharp](https://github.com/SixLabors/ImageSharp) for the processing pipeline.
 
 ## Installation and running the app
 
@@ -32,7 +32,7 @@ You can now install everything with a single click on Windows 10 or Windows 11.
 During installation the script will:
 
 - verify you are on 64-bit Windows 10/11,
-- download a private copy of the .NET 8 SDK if one is not already present,
+- download a private copy of the .NET 9 SDK if one is not already present,
 - restore NuGet packages and publish a self-contained `win-x64` build,
 - copy the compiled app to `%LOCALAPPDATA%\SkidbladnirImageProcessor` (or the directory you pass with `-InstallDir`), and
 - create Start menu and desktop shortcuts (desktop can be skipped with `-NoDesktopShortcut`).
@@ -53,7 +53,7 @@ Add `-InstallDir "D:\AstroTools\Skidbladnir"` to choose a different location or 
 
 If you would rather take control of every step:
 
-1. Install the latest [.NET 8 SDK for Windows x64](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) and, optionally, [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) with the **.NET desktop development** workload.
+1. Install the latest [.NET 9 SDK for Windows x64](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) and, optionally, [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) with the **.NET desktop development** workload.
 2. Clone or extract the repository and open a terminal in the folder.
 3. Restore packages and build:
 
