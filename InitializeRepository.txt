@@ -1,0 +1,7 @@
+git config --global user.name "Tommy Bird"
+git config --global user.email "birdtommym@gmail.com"
+# inside the project directory
+git init -b main                 # make 'main' the default branch
+echo "SkidbladnirProcessor" > README.md
+git add .
+git commit -m "Initial commit"
